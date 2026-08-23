@@ -49,7 +49,7 @@ The `cleaning_data` function handles key data transformations:
 
 ![Titanic Survival by Age](survivors.png)
 
-![Male / Female](titanic_survivors2.png)
+![Male / Female](titanic_survivors_2.png)
 
 The generated plot integrates two visual layers:
 * **Age Histogram (Green vs. Red):** Bins age groups in 10-year intervals (0 to 80) to contrast survivors against non-survivors.
