@@ -1,56 +1,79 @@
-# Titanic Survival Analysis by Age Group
+# 🚢 Titanic Survival Analysis
 
-A data analysis project exploring the correlation between passenger age and survival rates using the classic Kaggle Titanic dataset. This script demonstrates data cleaning, missing value imputation, age group segmentation, and data visualization with Python.
-
----
-
-## Overview
-
-The goal of this analysis is to evaluate how age impacted a passenger's likelihood of survival aboard the Titanic. By cleaning raw demographic data and bucketing age ranges into 10-year intervals, this project highlights key survival metrics across different age demographics.
+An exploratory data analysis (EDA) and data visualization project analyzing passenger survival rates from the Titanic dataset using Python (**Pandas**, **NumPy**, and **Matplotlib**).
 
 ---
 
-## Dataset
+## 📌 Project Overview
 
-* **Source:** [Kaggle - Titanic: Machine Learning from Disaster](https://www.kaggle.com/c/titanic/data)
-* **File Used:** `train.csv`
-* **Key Features:** `Survived` (0 = No, 1 = Yes), `Age` (Passenger age in years)
-
----
-
-## Key Features & Workflow
-
-1. **Data Preprocessing & Cleaning:**
-   * Removed non-essential columns (`PassengerId`, `Pclass`, `Name`, `Cabin`, `Ticket`, etc.) to streamline analysis.
-   * Handled missing age values by imputing the dataset's overall median age.
-   * Converted age floating points to integers and adjusted extreme outlier values.
-
-2. **Data Visualization:**
-   * Built a side-by-side comparative histogram using `matplotlib` to visualize age distribution across survivors and non-survivors in 10-year bins.
-
-3. **Demographic Breakdown:**
-   * Filtered and quantified survival counts across key adult age brackets (20–30, 30–40, and 40–50 years old).
+This script cleans Kaggle's classic Titanic training dataset, filters key features (age, sex, and survival status), and delivers:
+1. **Comparative Histograms** showcasing the age distribution between survivors and non-survivors.
+2. **Horizontal Reference Lines** tracking how gender impacted overall survival.
+3. **Quantitative Breakdowns** printed to the console for specific age brackets (20 to 50 years old).
 
 ---
 
-## Visualizations
+## 🛠️ Requirements & Installation
 
-### Age Distribution vs. Survival Status
-The histogram illustrates passenger outcomes broken down into 10-year age increments:
+Make sure you have Python 3.x installed along with the required libraries:
+
+```bash
+pip install numpy pandas matplotlib
+```
+
+Download the training dataset from Kaggle and place it in the following directory:
+`kaggle/titanic/train.csv`
+
+---
+
+## 🚀 Running the Script
+
+Execute the main script via terminal:
+
+```bash
+python main.py
+```
+
+---
+
+## 🧹 Data Preprocessing
+
+The `cleaning_data` function handles key data transformations:
+* **Feature Dropping:** Removes non-essential variables (`PassengerId`, `Pclass`, `Name`, `SibSp`, `Parch`, `Ticket`, `Fare`, `Cabin`, `Embarked`).
+* **Imputation:** Fills missing values in the `Age` column using the **median**.
+* **Age Standardization:** Casts age values to integers and overrides records under 3 years old with the calculated median.
+
+---
+
+## 📊 Visualizations
 
 ![Titanic Survival by Age](survivors.png)
 
+![Male / Female](titanic_survivors2.png)
+
+The generated plot integrates two visual layers:
+* **Age Histogram (Green vs. Red):** Bins age groups in 10-year intervals (0 to 80) to contrast survivors against non-survivors.
+* **Gender Threshold Lines:**
+  * **Dashed Blue (`--`):** Surviving Males
+  * **Dashed Pink (`--`):** Surviving Females
+  * **Dashed Red (`--`):** Deceased Males
+  * **Dotted Red (`:`):** Deceased Females
+
 ---
 
-## Female / Male Survivors
+## 📈 Key Insights & Analysis
 
-![Titanic Survival by Age](titanic_survivors2.png)
+Based on the processed metrics and plot output:
 
-## Getting Started
+### 1. Stark Gender Disparity ("Women and Children First")
+* **Female Survival Advantage:** The horizontal line for female survivors sits significantly higher than that of male survivors.
+* **Male Mortality Rate:** Deceased males account for the highest count across the board, confirming that gender was the single most decisive factor during evacuation.
 
-### Prerequisites
+### 2. Age Bracket Breakdown (20 to 50 Years Old)
+Console output for adult demographics highlights:
+* **20–30 Age Group:** Represents the largest overall demographic onboard. It accounts for the highest absolute numbers in both casualties and survivors, showing that young adults bore a massive portion of total losses.
+* **30–40 Age Group:** Displays a slightly narrower gap between survivors and casualties compared to the 20–30 bracket, though non-survivors still outnumber survivors.
+* **40–50 Age Group:** Features a smaller overall sample size, with survival counts declining further as age increases.
 
-Ensure you have Python installed along with the required libraries:
-
-```bash
-pip install pandas numpy matplotlib 
+### 3. Preprocessing Impact
+* Imputing missing age values with the **median** (~28 years old) artificially inflates the **20–30 age bin**. Keep this imputation bias in mind when evaluating exact frequencies in that specific bracket.
