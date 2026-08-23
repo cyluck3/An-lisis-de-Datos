@@ -42,6 +42,10 @@ The histogram illustrates passenger outcomes broken down into 10-year age increm
 
 ---
 
+## Female / Male Survivors
+
+![Titanic Survival by Age](titanic_survivors2.png)
+
 ## Getting Started
 
 ### Prerequisites
