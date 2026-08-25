@@ -49,7 +49,7 @@ pip install pandas numpy matplotlib
 
 ## 📊 Dataset Setup
 
-The script expects the Kaggle Amazon Sales dataset structure located at: https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset
+The script expects the Kaggle Amazon Sales dataset structure, you can download it here: https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset
 
 ### Raw Dataset Columns Handled:
 - `actual_price`: Raw price values formatted as strings with currency markers.
