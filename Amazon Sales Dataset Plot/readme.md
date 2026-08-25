@@ -86,8 +86,7 @@ The generated plot features four key panels arranged as follows:
 | **Bottom-Left** | Sentiment Binary | Positive ($\ge 4.0$) vs Negative ($< 4.0$) votes |
 | **Bottom-Right** | Effective Prices | Final post-discount distribution with area fill trend |
 
-![Data Visualization]("amazon_sales.png").
-
+![Data Visualization](amazon_sales.png)
 ---
 
 
